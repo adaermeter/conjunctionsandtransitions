@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conjunctions - English Connectives Master</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .conjunction-type {
+      background: white;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px var(--shadow);
+    }
+    
+    .fanboys {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .fanboy-card {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+    }
+    
+    .fanboy-card:nth-child(even) {
+      background: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Conjunctions Master</h1>
+    <p>Learn to connect words, phrases, and clauses like a pro</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="conjunctions.html" class="active">Conjunctions</a></li>
+      <li><a href="transitions.html">Transitions</a></li>
+      <li><a href="paired-conjunctions.html">Paired Conjunctions</a></li>
+      <li><a href="games.html">Games</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="content-section">
+      <h2>What are Conjunctions?</h2>
+      <p>Conjunctions are words that connect clauses, verbs, adjectives, adverbs, or phrases together. They act as bridges between ideas in a sentence.</p>
+      
+      <div class="conjunction-type">
+        <h3>1. Coordinating Conjunctions (FANBOYS)</h3>
+        <p>Used to connect words or clauses of equal importance. Remember the acronym FANBOYS:</p>
+        
+        <div class="fanboys">
+          <div class="fanboy-card">For</div>
+          <div class="fanboy-card">And</div>
+          <div class="fanboy-card">Nor</div>
+          <div class="fanboy-card">But</div>
+          <div class="fanboy-card">Or</div>
+          <div class="fanboy-card">Yet</div>
+          <div class="fanboy-card">So</div>
+        </div>
+        
+        <div class="examples">
+          <p><strong>Usage Notes:</strong></p>
+          <p>• <strong>But/Yet</strong> - show contrast</p>
+          <p>• <strong>And/Or</strong> - connect similar structures</p>
+          <p>• <strong>For</strong> - shows reason (more formal)</p>
+          <p>• <strong>Nor</strong> - used with "neither", requires inverted structure</p>
+          <p>• <strong>So</strong> - shows result</p>
+          
+          <p><strong>Examples:</strong></p>
+          <p>• I wanted to go out, <strong>but</strong> it was raining.</p>
+          <p>• Do you want coffee <strong>or</strong> tea?</p>
+          <p>• She doesn't like me, <strong>nor</strong> does she love you.</p>
+          <p>• It was cold, <strong>yet</strong> we went swimming.</p>
+          <p>• She studied hard, <strong>so</strong> she passed the exam.</p>
+        </div>
+      </div>
+
+      <div class="conjunction-type">
+        <h3>2. Subordinating Conjunctions</h3>
+        <p>Connect a main clause with a subordinate (dependent) clause.</p>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• <strong>Although</strong> it was difficult, she finished the task.</p>
+          <p>• <strong>Because</strong> he was tired, he went to bed early.</p>
+          <p>• <strong>While</strong> I was cooking, she was setting the table.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Practice Exercise</h2>
+      <p>Complete the sentences with the correct conjunctions:</p>
+      
+      <div id="quiz1">
+        <!-- Quiz questions will be inserted here by JavaScript -->
+      </div>
+      
+      <button class="quiz-btn" onclick="checkQuiz(1)">Check Answers</button>
+      <div id="result1" class="quiz-result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 English Connectives Master. B2 Level Learning Hub</p>
+  </footer>
+
+  <script>
+    const quizzes1 = [
+      {q: "I was hungry. ______ I prepared breakfast.", options: ["so", "but", "nor", "yet"], correct: "so"},
+      {q: "She doesn't like parrots. ______ does she like budgies.", options: ["nor", "and", "but", "so"], correct: "nor"},
+      {q: "It was raining. ______ we decided to go outside anyway.", options: ["yet", "so", "and", "for"], correct: "yet"},
+      {q: "He is smart. ______ handsome.", options: ["and", "but", "so", "yet"], correct: "and"},
+      {q: "I want to buy some clothes. ______ I went to the mall.", options: ["so", "but", "nor", "yet"], correct: "so"}
+    ];
+
+    // Initialize quiz
+    const quizDiv = document.getElementById('quiz1');
+    quizzes1.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'quiz-question';
+      div.innerHTML = `
+        <p>${i + 1}. ${item.q}</p>
+        ${item.options.map(o => `
+          <label>
+            <input type="radio" name="q${i}" value="${o}"> ${o}
+          </label>
+        `).join("")}
+      `;
+      quizDiv.appendChild(div);
+    });
+
+    function checkQuiz(num) {
+      let correct = 0;
+      const total = quizzes1.length;
+      
+      quizzes1.forEach((q, i) => {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel && sel.value === q.correct) {
+          correct++;
+        }
+      });
+      
+      const resultDiv = document.getElementById('result1');
+      resultDiv.textContent = `You got ${correct}/${total} correct!`;
+      resultDiv.className = `quiz-result ${correct === total ? 'success' : 'warning'}`;
+    }
+  </script>
+</body>
+</html>

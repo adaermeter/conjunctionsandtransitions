@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transitions - English Connectives Master</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .transition-category {
+      background: white;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px var(--shadow);
+    }
+    
+    .transition-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .transition-item {
+      background: #f8f9fa;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Transitions Master</h1>
+    <p>Learn to create smooth connections between ideas</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="conjunctions.html">Conjunctions</a></li>
+      <li><a href="transitions.html" class="active">Transitions</a></li>
+      <li><a href="paired-conjunctions.html">Paired Conjunctions</a></li>
+      <li><a href="games.html">Games</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="content-section">
+      <h2>What are Transition Words?</h2>
+      <p>Transition words connect sentences and paragraphs, making your writing more fluent and organized. They show relationships between ideas.</p>
+      
+      <div class="transition-category">
+        <h3>ADDITION</h3>
+        <p>Used when adding information to a sentence:</p>
+        <div class="transition-list">
+          <div class="transition-item">Also</div>
+          <div class="transition-item">Furthermore</div>
+          <div class="transition-item">Moreover</div>
+          <div class="transition-item">In addition</div>
+          <div class="transition-item">Besides</div>
+          <div class="transition-item">What's more</div>
+        </div>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• She speaks Turkish; <strong>in addition</strong>, she knows English.</p>
+          <p>• He is intelligent. <strong>Furthermore</strong>, he works very hard.</p>
+          <p><strong>Note:</strong> "Furthermore" and "moreover" are more emphatic. "What's more" is informal.</p>
+        </div>
+      </div>
+
+      <div class="transition-category">
+        <h3>CAUSE & EFFECT</h3>
+        <div class="transition-list">
+          <div class="transition-item">Therefore</div>
+          <div class="transition-item">Consequently</div>
+          <div class="transition-item">As a result</div>
+          <div class="transition-item">Thus</div>
+          <div class="transition-item">Hence</div>
+          <div class="transition-item">Accordingly</div>
+        </div>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• It was raining heavily. <strong>Therefore</strong>, the match was canceled.</p>
+          <p>• He didn't study. <strong>As a result</strong>, he failed the exam.</p>
+        </div>
+      </div>
+
+      <div class="transition-category">
+        <h3>COMPARISON & CONTRAST</h3>
+        <div class="transition-list">
+          <div class="transition-item">However</div>
+          <div class="transition-item">On the other hand</div>
+          <div class="transition-item">Conversely</div>
+          <div class="transition-item">In contrast</div>
+          <div class="transition-item">Whereas</div>
+          <div class="transition-item">Nevertheless</div>
+        </div>
+      </div>
+
+      <div class="transition-category">
+        <h3>EMPHASIS</h3>
+        <div class="transition-list">
+          <div class="transition-item">Certainly</div>
+          <div class="transition-item">Indeed</div>
+          <div class="transition-item">In fact</div>
+          <div class="transition-item">Undoubtedly</div>
+          <div class="transition-item">Clearly</div>
+        </div>
+      </div>
+
+      <div class="transition-category">
+        <h3>TIME</h3>
+        <div class="transition-list">
+          <div class="transition-item">Meanwhile</div>
+          <div class="transition-item">Subsequently</div>
+          <div class="transition-item">Eventually</div>
+          <div class="transition-item">Finally</div>
+          <div class="transition-item">Then</div>
+          <div class="transition-item">Next</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Practice Exercise</h2>
+      <p>Choose the correct transition word for each sentence:</p>
+      
+      <div id="quiz2">
+        <!-- Quiz questions will be inserted here by JavaScript -->
+      </div>
+      
+      <button class="quiz-btn" onclick="checkQuiz2()">Check Answers</button>
+      <div id="result2" class="quiz-result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 English Connectives Master. B2 Level Learning Hub</p>
+  </footer>
+
+  <script>
+    const quizzes2 = [
+      {q: "I like coffee. ______, I drink it every morning.", options: ["Therefore", "However", "For example", "Moreover"], correct: "Therefore"},
+      {q: "She was tired. ______, she went to bed early.", options: ["In addition", "Therefore", "However", "For instance"], correct: "Therefore"},
+      {q: "I like apples. ______, I don't like bananas.", options: ["Moreover", "On the other hand", "For example", "Therefore"], correct: "On the other hand"},
+      {q: "He's kind. ______, he helps everyone.", options: ["However", "For example", "Therefore", "In contrast"], correct: "For example"},
+      {q: "We were late. ______, we missed the bus.", options: ["As a result", "For instance", "In contrast", "However"], correct: "As a result"}
+    ];
+
+    // Initialize quiz
+    const quizDiv2 = document.getElementById('quiz2');
+    quizzes2.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'quiz-question';
+      div.innerHTML = `
+        <p>${i + 1}. ${item.q}</p>
+        ${item.options.map(o => `
+          <label>
+            <input type="radio" name="q${i}" value="${o}"> ${o}
+          </label>
+        `).join("")}
+      `;
+      quizDiv2.appendChild(div);
+    });
+
+    function checkQuiz2() {
+      let correct = 0;
+      const total = quizzes2.length;
+      
+      quizzes2.forEach((q, i) => {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel && sel.value === q.correct) {
+          correct++;
+        }
+      });
+      
+      const resultDiv = document.getElementById('result2');
+      resultDiv.textContent = `You got ${correct}/${total} correct!`;
+      resultDiv.className = `quiz-result ${correct === total ? 'success' : 'warning'}`;
+    }
+  </script>
+</body>
+</html>

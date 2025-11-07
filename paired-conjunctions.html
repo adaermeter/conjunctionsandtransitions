@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paired Conjunctions - English Connectives Master</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .conjunction-pair {
+      background: white;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px var(--shadow);
+      border-left: 4px solid var(--accent);
+    }
+    
+    .pair-structure {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      display: inline-block;
+      margin: 0.5rem 0;
+    }
+    
+    .examples {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Paired Conjunctions Master</h1>
+    <p>Learn to use conjunctions in pairs effectively</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="conjunctions.html">Conjunctions</a></li>
+      <li><a href="transitions.html">Transitions</a></li>
+      <li><a href="paired-conjunctions.html" class="active">Paired Conjunctions</a></li>
+      <li><a href="games.html">Games</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="content-section">
+      <h2>What are Paired Conjunctions?</h2>
+      <p>Paired conjunctions (also called correlative conjunctions) work in pairs to connect words, phrases, or clauses. They must maintain parallel structure in the sentence.</p>
+      
+      <div class="conjunction-pair">
+        <h3>Both...and</h3>
+        <div class="pair-structure">Both X and Y</div>
+        <p>Connects two positive ideas of equal importance.</p>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• <strong>Both</strong> my sister <strong>and</strong> my brother are doctors.</p>
+          <p>• She is <strong>both</strong> intelligent <strong>and</strong> hardworking.</p>
+        </div>
+      </div>
+
+      <div class="conjunction-pair">
+        <h3>Either...or</h3>
+        <div class="pair-structure">Either X or Y</div>
+        <p>Presents a choice between two alternatives.</p>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• You can have <strong>either</strong> coffee <strong>or</strong> tea.</p>
+          <p>• <strong>Either</strong> study hard <strong>or</strong> fail the exam.</p>
+        </div>
+      </div>
+
+      <div class="conjunction-pair">
+        <h3>Neither...nor</h3>
+        <div class="pair-structure">Neither X nor Y</div>
+        <p>Connects two negative ideas.</p>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• <strong>Neither</strong> John <strong>nor</strong> Mary came to the party.</p>
+          <p>• She <strong>neither</strong> called <strong>nor</strong> texted me.</p>
+        </div>
+      </div>
+
+      <div class="conjunction-pair">
+        <h3>Not only...but also</h3>
+        <div class="pair-structure">Not only X but also Y</div>
+        <p>Emphasizes the second element while including the first.</p>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• She is <strong>not only</strong> beautiful <strong>but also</strong> intelligent.</p>
+          <p>• He <strong>not only</strong> sings <strong>but also</strong> dances well.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Practice Exercise</h2>
+      <p>Complete the sentences with the correct paired conjunctions:</p>
+      
+      <div class="quiz-question">
+        <p>1. ______ my father ______ my mother can speak French.</p>
+        <label><input type="radio" name="q1" value="both-and"> Both...and</label>
+        <label><input type="radio" name="q1" value="either-or"> Either...or</label>
+        <label><input type="radio" name="q1" value="neither-nor"> Neither...nor</label>
+      </div>
+      
+      <div class="quiz-question">
+        <p>2. You can ______ stay here ______ come with us.</p>
+        <label><input type="radio" name="q2" value="both-and"> Both...and</label>
+        <label><input type="radio" name="q2" value="either-or"> Either...or</label>
+        <label><input type="radio" name="q2" value="neither-nor"> Neither...nor</label>
+      </div>
+      
+      <div class="quiz-question">
+        <p>3. She ______ called ______ visited me yesterday.</p>
+        <label><input type="radio" name="q3" value="both-and"> Both...and</label>
+        <label><input type="radio" name="q3" value="either-or"> Either...or</label>
+        <label><input type="radio" name="q3" value="neither-nor"> Neither...nor</label>
+      </div>
+      
+      <button class="quiz-btn" onclick="checkPairedQuiz()">Check Answers</button>
+      <div id="pairedResult" class="quiz-result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 English Connectives Master. B2 Level Learning Hub</p>
+  </footer>
+
+  <script>
+    function checkPairedQuiz() {
+      const answers = {
+        q1: "neither-nor",
+        q2: "either-or", 
+        q3: "neither-nor"
+      };
+      
+      let correct = 0;
+      const total = Object.keys(answers).length;
+      
+      Object.keys(answers).forEach(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          correct++;
+        }
+      });
+      
+      const resultDiv = document.getElementById('pairedResult');
+      resultDiv.textContent = `You got ${correct}/${total} correct!`;
+      resultDiv.className = `quiz-result ${correct === total ? 'success' : 'warning'}`;
+    }
+  </script>
+</body>
+</html>
