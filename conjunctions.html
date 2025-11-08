@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Understanding Conjunctions</title>
+  <title>Conjunctions - English Connectives Master</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .conjunction-type {
@@ -45,8 +45,8 @@
 </head>
 <body>
   <header>
-    <h1>Understanding Conjunctions</h1>
-    <p>Learn to connect words, phrases, and clauses!</p>
+    <h1>Conjunctions Master</h1>
+    <p>Learn to connect words, phrases, and clauses like a pro</p>
   </header>
 
   <nav>
@@ -114,16 +114,10 @@
           <p>• <strong>If</strong> you study hard, you will pass the exam.</p>
         </div>
       </div>
-
-      <div class="usage-tip">
-        <h4>🎯 Advanced Usage:</h4>
-        <p><strong>Comma Rules:</strong> Use a comma before coordinating conjunctions when they connect two independent clauses. No comma needed for single words or phrases.</p>
-        <p><strong>Example:</strong> "I like coffee, but I don't like tea." (two clauses) vs "I like coffee and tea." (two nouns)</p>
-      </div>
     </section>
 
     <section class="content-section">
-      <h2>Practice Exercise</h2>
+      <h2>Practice Exercise - 20 Questions</h2>
       <p>Complete the sentences with the correct conjunctions:</p>
       
       <div id="quiz1">
@@ -133,27 +127,6 @@
       <button class="quiz-btn" onclick="checkQuiz(1)">Check Answers</button>
       <div id="result1" class="quiz-result"></div>
     </section>
-
-    <section class="content-section">
-      <h2>📖 Extra Examples & Usage</h2>
-      
-      <div class="conjunction-type">
-        <h3>Real-Life Context Examples</h3>
-        <div class="examples">
-          <p><strong>Academic Writing:</strong></p>
-          <p>• "The results were significant, <strong>so</strong> we can reject the null hypothesis."</p>
-          <p>• "<strong>Although</strong> the sample size was small, the findings were consistent."</p>
-          
-          <p><strong>Everyday Conversation:</strong></p>
-          <p>• "I'll call you <strong>when</strong> I arrive at the station."</p>
-          <p>• "We can go to the movies <strong>unless</strong> you're too tired."</p>
-          
-          <p><strong>Formal Writing:</strong></p>
-          <p>• "The company expanded rapidly, <strong>for</strong> the market conditions were favorable."</p>
-          <p>• "<strong>Since</strong> the deadline is approaching, we must work efficiently."</p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
@@ -162,13 +135,33 @@
 
   <script>
     const quizzes1 = [
+      // Basic Level
       {q: "I was hungry. ______ I prepared breakfast.", options: ["so", "but", "nor", "yet"], correct: "so"},
       {q: "She doesn't like parrots. ______ does she like budgies.", options: ["nor", "and", "but", "so"], correct: "nor"},
       {q: "It was raining. ______ we decided to go outside anyway.", options: ["yet", "so", "and", "for"], correct: "yet"},
       {q: "He is smart. ______ handsome.", options: ["and", "but", "so", "yet"], correct: "and"},
       {q: "I want to buy some clothes. ______ I went to the mall.", options: ["so", "but", "nor", "yet"], correct: "so"},
+      
+      // Intermediate Level
       {q: "______ she was sick, she went to school.", options: ["Although", "Because", "So", "And"], correct: "Although"},
-      {q: "You can have cake ______ you finish your vegetables.", options: ["if", "but", "so", "and"], correct: "if"}
+      {q: "You can have cake ______ you finish your vegetables.", options: ["if", "but", "so", "and"], correct: "if"},
+      {q: "We waited ______ the train arrived.", options: ["until", "because", "so", "and"], correct: "until"},
+      {q: "______ it was getting dark, we continued hiking.", options: ["Although", "Because", "So", "And"], correct: "Although"},
+      {q: "I'll call you ______ I reach the airport.", options: ["when", "but", "so", "and"], correct: "when"},
+      
+      // Advanced/Academic Level
+      {q: "The experiment failed ______ the equipment was faulty.", options: ["because", "but", "so", "and"], correct: "because"},
+      {q: "______ the data suggests a correlation, we cannot prove causation.", options: ["Although", "Because", "So", "And"], correct: "Although"},
+      {q: "The company expanded ______ market conditions were favorable.", options: ["for", "but", "so", "and"], correct: "for"},
+      {q: "______ the deadline approaches, we must work more efficiently.", options: ["As", "But", "So", "And"], correct: "As"},
+      {q: "The results were inconclusive ______ the sample size was too small.", options: ["because", "but", "so", "and"], correct: "because"},
+      
+      // Complex Structures
+      {q: "She not only speaks English ______ also French fluently.", options: ["but", "and", "so", "because"], correct: "but"},
+      {q: "______ we leave now, we will miss the beginning.", options: ["Unless", "Because", "So", "And"], correct: "Unless"},
+      {q: "The project was successful ______ everyone collaborated effectively.", options: ["because", "but", "so", "and"], correct: "because"},
+      {q: "______ analyzing the data, we discovered significant patterns.", options: ["While", "Because", "So", "And"], correct: "While"},
+      {q: "The theory appears valid ______ practical applications show limitations.", options: ["but", "and", "so", "because"], correct: "but"}
     ];
 
     // Initialize quiz
