@@ -86,7 +86,7 @@ header p {
   font-weight: 300;
 }
 
-/* NAVIGATION - Mor Tema */
+/* NAVIGATION - DÜZELTİLMİŞ STICKY */
 nav {
   background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
   padding: 0.8rem 0;
@@ -94,6 +94,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 nav ul {
@@ -400,6 +401,13 @@ footer {
    MOBILE RESPONSIVE
 ======================= */
 @media (max-width: 768px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+  }
+
   nav ul {
     flex-direction: column;
     gap: 0.8rem;
