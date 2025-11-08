@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conjunctions - English Connectives Master</title>
+  <title>Understanding Conjunctions</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .conjunction-type {
@@ -33,12 +33,20 @@
     .fanboy-card:nth-child(even) {
       background: var(--accent);
     }
+
+    .usage-tip {
+      background: #e8f5e8;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--success);
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Conjunctions Master</h1>
-    <p>Learn to connect words, phrases, and clauses like a pro</p>
+    <h1>Understanding Conjunctions</h1>
+    <p>Learn to connect words, phrases, and clauses!</p>
   </header>
 
   <nav>
@@ -55,6 +63,11 @@
     <section class="content-section">
       <h2>What are Conjunctions?</h2>
       <p>Conjunctions are words that connect clauses, verbs, adjectives, adverbs, or phrases together. They act as bridges between ideas in a sentence.</p>
+      
+      <div class="usage-tip">
+        <h4>💡 Pro Tip:</h4>
+        <p>Conjunctions make your writing flow smoothly and show relationships between ideas. Without them, sentences would be short and choppy.</p>
+      </div>
       
       <div class="conjunction-type">
         <h3>1. Coordinating Conjunctions (FANBOYS)</h3>
@@ -91,11 +104,21 @@
         <h3>2. Subordinating Conjunctions</h3>
         <p>Connect a main clause with a subordinate (dependent) clause.</p>
         <div class="examples">
+          <p><strong>Common Subordinating Conjunctions:</strong></p>
+          <p>• although, because, since, while, when, if, unless, until</p>
+          
           <p><strong>Examples:</strong></p>
           <p>• <strong>Although</strong> it was difficult, she finished the task.</p>
           <p>• <strong>Because</strong> he was tired, he went to bed early.</p>
           <p>• <strong>While</strong> I was cooking, she was setting the table.</p>
+          <p>• <strong>If</strong> you study hard, you will pass the exam.</p>
         </div>
+      </div>
+
+      <div class="usage-tip">
+        <h4>🎯 Advanced Usage:</h4>
+        <p><strong>Comma Rules:</strong> Use a comma before coordinating conjunctions when they connect two independent clauses. No comma needed for single words or phrases.</p>
+        <p><strong>Example:</strong> "I like coffee, but I don't like tea." (two clauses) vs "I like coffee and tea." (two nouns)</p>
       </div>
     </section>
 
@@ -110,10 +133,31 @@
       <button class="quiz-btn" onclick="checkQuiz(1)">Check Answers</button>
       <div id="result1" class="quiz-result"></div>
     </section>
+
+    <section class="content-section">
+      <h2>📖 Extra Examples & Usage</h2>
+      
+      <div class="conjunction-type">
+        <h3>Real-Life Context Examples</h3>
+        <div class="examples">
+          <p><strong>Academic Writing:</strong></p>
+          <p>• "The results were significant, <strong>so</strong> we can reject the null hypothesis."</p>
+          <p>• "<strong>Although</strong> the sample size was small, the findings were consistent."</p>
+          
+          <p><strong>Everyday Conversation:</strong></p>
+          <p>• "I'll call you <strong>when</strong> I arrive at the station."</p>
+          <p>• "We can go to the movies <strong>unless</strong> you're too tired."</p>
+          
+          <p><strong>Formal Writing:</strong></p>
+          <p>• "The company expanded rapidly, <strong>for</strong> the market conditions were favorable."</p>
+          <p>• "<strong>Since</strong> the deadline is approaching, we must work efficiently."</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 English Connectives Master. B2 Level Learning Hub</p>
+    <p>&copy; 2025 English Connectives Master. Designed by Ada & Tuyen</p>
   </footer>
 
   <script>
@@ -122,7 +166,9 @@
       {q: "She doesn't like parrots. ______ does she like budgies.", options: ["nor", "and", "but", "so"], correct: "nor"},
       {q: "It was raining. ______ we decided to go outside anyway.", options: ["yet", "so", "and", "for"], correct: "yet"},
       {q: "He is smart. ______ handsome.", options: ["and", "but", "so", "yet"], correct: "and"},
-      {q: "I want to buy some clothes. ______ I went to the mall.", options: ["so", "but", "nor", "yet"], correct: "so"}
+      {q: "I want to buy some clothes. ______ I went to the mall.", options: ["so", "but", "nor", "yet"], correct: "so"},
+      {q: "______ she was sick, she went to school.", options: ["Although", "Because", "So", "And"], correct: "Although"},
+      {q: "You can have cake ______ you finish your vegetables.", options: ["if", "but", "so", "and"], correct: "if"}
     ];
 
     // Initialize quiz

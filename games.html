@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Games - English Connectives Master</title>
+  <title>Let's Practice</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Matching Game Styles */
@@ -268,80 +268,6 @@
       color: var(--primary);
     }
 
-    /* Memory Game */
-    .memory-game {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px var(--shadow);
-      margin: 2rem 0;
-    }
-
-    .memory-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin: 2rem auto;
-      max-width: 500px;
-    }
-
-    .memory-card {
-      width: 100px;
-      height: 100px;
-      background: var(--primary);
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s;
-      transform-style: preserve-3d;
-      position: relative;
-    }
-
-    .memory-card .front,
-    .memory-card .back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backface-visibility: hidden;
-      border-radius: 15px;
-    }
-
-    .memory-card .front {
-      background: var(--primary);
-      color: white;
-    }
-
-    .memory-card .back {
-      background: white;
-      color: var(--text);
-      transform: rotateY(180deg);
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 0.5rem;
-    }
-
-    .memory-card.flipped {
-      transform: rotateY(180deg);
-    }
-
-    .memory-card.matched {
-      background: var(--success);
-      transform: scale(0.95) rotateY(180deg);
-    }
-
-    .memory-card.matched .back {
-      background: var(--success);
-      color: white;
-    }
-
     @media (max-width: 768px) {
       .game-grid { 
         grid-template-columns: 1fr; 
@@ -355,26 +281,16 @@
         width: 100%;
       }
 
-      .memory-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
       .quiz-options {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .memory-grid {
-        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>English Games Hub</h1>
-    <p>Learn through play with these interactive games!</p>
+    <h1>Games</h1>
+    <p>Let's Practice!</p>
   </header>
 
   <nav>
@@ -506,27 +422,10 @@
         </div>
       </div>
     </section>
-
-    <!-- Memory Game -->
-    <section class="content-section">
-      <h2>🎴 Memory Match</h2>
-      <p>Find matching pairs of words and their meanings.</p>
-      
-      <div class="memory-game">
-        <div class="memory-grid" id="memoryGrid">
-          <!-- Memory cards will be populated by JavaScript -->
-        </div>
-        
-        <div class="game-controls">
-          <button class="game-btn" onclick="resetMemoryGame()">🔄 New Game</button>
-          <div id="memoryScore" class="score-display">Pairs Found: 0/4</div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 English Connectives Master. B2 Level Learning Hub</p>
+    <p>&copy; 2025 English Connectives Master. Designed by Ada & Tuyen</p>
   </footer>
 
   <script>
@@ -535,7 +434,9 @@
       { word: 'although', meaning: 'shows contrast', color: '#FF6B6B' },
       { word: 'because', meaning: 'shows reason', color: '#3AA5FF' },
       { word: 'so', meaning: 'shows result', color: '#FFD93D' },
-      { word: 'and', meaning: 'shows addition', color: '#6BCB77' }
+      { word: 'and', meaning: 'shows addition', color: '#6BCB77' },
+      { word: 'but', meaning: 'shows opposition', color: '#A78BFA' },
+      { word: 'however', meaning: 'shows contrast', color: '#FF9E6B' }
     ];
 
     let selectedWord = null, selectedMeaning = null, matchedPairs = 0;
@@ -544,6 +445,7 @@
       const gameGrid = document.getElementById('matchingGame');
       gameGrid.innerHTML = '';
       
+      // Shuffle arrays
       const shuffledWords = [...matchingPairs].sort(() => Math.random() - 0.5);
       const shuffledMeanings = [...matchingPairs].sort(() => Math.random() - 0.5);
       
@@ -703,71 +605,71 @@
       document.getElementById('blanksResult').textContent = '';
     }
 
-// Sentence Builder Game - DÜZELTİLMİŞ KOD
-let currentSentence = [];
-let userSentence = [];
+    // Sentence Builder Game
+    let currentSentence = [];
+    let userSentence = [];
 
-function initSentenceBuilder() {
-  const wordPool = document.getElementById('wordPool');
-  const sentences = [
-    { words: ['I', 'like', 'coffee', 'but', 'I', "don't", 'like', 'tea', '.'], display: 'I like coffee but I don\'t like tea.' },
-    { words: ['Although', 'it', 'was', 'raining', ',', 'we', 'went', 'outside', '.'], display: 'Although it was raining, we went outside.' },
-    { words: ['She', 'studied', 'hard', ',', 'so', 'she', 'passed', 'the', 'exam', '.'], display: 'She studied hard, so she passed the exam.' },
-    { words: ['He', 'wanted', 'to', 'go', ',', 'but', 'he', 'was', 'tired', '.'], display: 'He wanted to go, but he was tired.' }
-  ];
-  
-  const randomSentence = sentences[Math.floor(Math.random() * sentences.length)];
-  currentSentence = randomSentence.words;
-  userSentence = [];
-  
-  wordPool.innerHTML = '';
-  // Kelimeleri karıştır ama noktalama işaretleri doğru yerde kalsın
-  const shuffledWords = [...randomSentence.words].sort(() => Math.random() - 0.5);
-  
-  shuffledWords.forEach(word => {
-    const wordSpan = document.createElement('span');
-    wordSpan.className = 'draggable-word';
-    wordSpan.textContent = word;
-    wordSpan.onclick = () => addWordToSentence(word, wordSpan);
-    wordPool.appendChild(wordSpan);
-  });
-  
-  document.getElementById('sentenceArea').innerHTML = 'Click words above to build your sentence...';
-  document.getElementById('sentenceResult').textContent = '';
-}
+    function initSentenceBuilder() {
+      const wordPool = document.getElementById('wordPool');
+      const sentences = [
+        { words: ['I', 'like', 'coffee', 'but', 'I', "don't", 'like', 'tea', '.'], display: 'I like coffee but I don\'t like tea.' },
+        { words: ['Although', 'it', 'was', 'raining', ',', 'we', 'went', 'outside', '.'], display: 'Although it was raining, we went outside.' },
+        { words: ['She', 'studied', 'hard', ',', 'so', 'she', 'passed', 'the', 'exam', '.'], display: 'She studied hard, so she passed the exam.' },
+        { words: ['He', 'wanted', 'to', 'go', ',', 'but', 'he', 'was', 'tired', '.'], display: 'He wanted to go, but he was tired.' }
+      ];
+      
+      const randomSentence = sentences[Math.floor(Math.random() * sentences.length)];
+      currentSentence = randomSentence.words;
+      userSentence = [];
+      
+      wordPool.innerHTML = '';
+      // Kelimeleri karıştır ama noktalama işaretleri doğru yerde kalsın
+      const shuffledWords = [...randomSentence.words].sort(() => Math.random() - 0.5);
+      
+      shuffledWords.forEach(word => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'draggable-word';
+        wordSpan.textContent = word;
+        wordSpan.onclick = () => addWordToSentence(word, wordSpan);
+        wordPool.appendChild(wordSpan);
+      });
+      
+      document.getElementById('sentenceArea').innerHTML = 'Click words above to build your sentence...';
+      document.getElementById('sentenceResult').textContent = '';
+    }
 
-function addWordToSentence(word, element) {
-  const sentenceArea = document.getElementById('sentenceArea');
-  if (sentenceArea.textContent === 'Click words above to build your sentence...') {
-    sentenceArea.innerHTML = '';
-  }
-  
-  const wordSpan = document.createElement('span');
-  wordSpan.className = 'draggable-word';
-  wordSpan.textContent = word;
-  sentenceArea.appendChild(wordSpan);
-  
-  userSentence.push(word);
-  
-  element.classList.add('used');
-  element.onclick = null;
-}
+    function addWordToSentence(word, element) {
+      const sentenceArea = document.getElementById('sentenceArea');
+      if (sentenceArea.textContent === 'Click words above to build your sentence...') {
+        sentenceArea.innerHTML = '';
+      }
+      
+      const wordSpan = document.createElement('span');
+      wordSpan.className = 'draggable-word';
+      wordSpan.textContent = word;
+      sentenceArea.appendChild(wordSpan);
+      
+      userSentence.push(word);
+      
+      element.classList.add('used');
+      element.onclick = null;
+    }
 
-function checkSentence() {
-  const resultDiv = document.getElementById('sentenceResult');
-  
-  if (JSON.stringify(userSentence) === JSON.stringify(currentSentence)) {
-    resultDiv.textContent = '✅ Perfect! Correct sentence!';
-    resultDiv.className = 'quiz-result success';
-  } else {
-    resultDiv.textContent = '❌ Not quite right. Try the "New Sentence" button!';
-    resultDiv.className = 'quiz-result warning';
-  }
-}
+    function checkSentence() {
+      const resultDiv = document.getElementById('sentenceResult');
+      
+      if (JSON.stringify(userSentence) === JSON.stringify(currentSentence)) {
+        resultDiv.textContent = '✅ Perfect! Correct sentence!';
+        resultDiv.className = 'quiz-result success';
+      } else {
+        resultDiv.textContent = '❌ Not quite right. Try the "New Sentence" button!';
+        resultDiv.className = 'quiz-result warning';
+      }
+    }
 
-function resetSentenceBuilder() {
-  initSentenceBuilder();
-}
+    function resetSentenceBuilder() {
+      initSentenceBuilder();
+    }
 
     // Quick Quiz Game
     const quizQuestions = [
@@ -875,100 +777,10 @@ function resetSentenceBuilder() {
       document.querySelector('.game-controls').innerHTML = '<button class="game-btn" onclick="nextQuizQuestion()">➡️ Next Question</button>';
     }
 
-    // Memory Game
-    function initMemoryGame() {
-      const memoryGrid = document.getElementById('memoryGrid');
-      memoryGrid.innerHTML = '';
-      
-      const cards = [
-        { front: 'Although', back: 'Shows contrast' },
-        { front: 'Because', back: 'Shows reason' },
-        { front: 'However', back: 'Shows contrast' },
-        { front: 'Therefore', back: 'Shows result' },
-        { front: 'Shows contrast', back: 'Although' },
-        { front: 'Shows reason', back: 'Because' },
-        { front: 'Shows contrast', back: 'However' },
-        { front: 'Shows result', back: 'Therefore' }
-      ].sort(() => Math.random() - 0.5);
-      
-      cards.forEach(card => {
-        const cardDiv = document.createElement('div');
-        cardDiv.className = 'memory-card';
-        
-        const frontDiv = document.createElement('div');
-        frontDiv.className = 'front';
-        frontDiv.textContent = '?';
-        
-        const backDiv = document.createElement('div');
-        backDiv.className = 'back';
-        backDiv.textContent = card.back;
-        
-        cardDiv.appendChild(frontDiv);
-        cardDiv.appendChild(backDiv);
-        cardDiv.dataset.content = card.front;
-        
-        cardDiv.onclick = () => flipMemoryCard(cardDiv);
-        memoryGrid.appendChild(cardDiv);
-      });
-    }
-
-    let flippedCards = [];
-    let memoryMatches = 0;
-
-    function flipMemoryCard(card) {
-      if (card.classList.contains('flipped') || card.classList.contains('matched')) return;
-      
-      card.classList.add('flipped');
-      flippedCards.push(card);
-      
-      if (flippedCards.length === 2) {
-        const [card1, card2] = flippedCards;
-        const content1 = card1.querySelector('.back').textContent;
-        const content2 = card2.querySelector('.back').textContent;
-        
-        // Check if cards match (word-meaning pairs)
-        const isMatch = 
-          (card1.dataset.content === 'Although' && content2 === 'Shows contrast') ||
-          (card2.dataset.content === 'Although' && content1 === 'Shows contrast') ||
-          (card1.dataset.content === 'Because' && content2 === 'Shows reason') ||
-          (card2.dataset.content === 'Because' && content1 === 'Shows reason') ||
-          (card1.dataset.content === 'However' && content2 === 'Shows contrast') ||
-          (card2.dataset.content === 'However' && content1 === 'Shows contrast') ||
-          (card1.dataset.content === 'Therefore' && content2 === 'Shows result') ||
-          (card2.dataset.content === 'Therefore' && content1 === 'Shows result');
-        
-        if (isMatch) {
-          card1.classList.add('matched');
-          card2.classList.add('matched');
-          memoryMatches++;
-          document.getElementById('memoryScore').textContent = `Pairs Found: ${memoryMatches}/4`;
-        }
-        
-        setTimeout(() => {
-          if (!card1.classList.contains('matched')) {
-            card1.classList.remove('flipped');
-          }
-          if (!card2.classList.contains('matched')) {
-            card2.classList.remove('flipped');
-          }
-          flippedCards = [];
-        }, 1000);
-      }
-    }
-
-    function resetMemoryGame() {
-      document.getElementById('memoryGrid').innerHTML = '';
-      flippedCards = [];
-      memoryMatches = 0;
-      document.getElementById('memoryScore').textContent = 'Pairs Found: 0/4';
-      initMemoryGame();
-    }
-
     // Initialize all games when page loads
     document.addEventListener('DOMContentLoaded', function() {
       initMatchingGame();
       initSentenceBuilder();
-      initMemoryGame();
       loadQuizQuestion();
     });
   </script>

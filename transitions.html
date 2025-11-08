@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transitions - English Connectives Master</title>
+  <title>Understanding Transitions</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .transition-category {
@@ -27,11 +27,33 @@
       border-radius: 8px;
       border-left: 3px solid var(--primary);
     }
+
+    .usage-tip {
+      background: #e8f5e8;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--success);
+    }
+
+    .formality-scale {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #fff3cd;
+      border-radius: 10px;
+    }
+
+    .formality-item {
+      text-align: center;
+      flex: 1;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Transitions Master</h1>
+    <h1>Understanding Transitions</h1>
     <p>Learn to create smooth connections between ideas</p>
   </header>
 
@@ -50,6 +72,26 @@
       <h2>What are Transition Words?</h2>
       <p>Transition words connect sentences and paragraphs, making your writing more fluent and organized. They show relationships between ideas.</p>
       
+      <div class="usage-tip">
+        <h4>💡 Key Difference:</h4>
+        <p>While conjunctions connect words and clauses within sentences, transitions connect ideas between sentences and paragraphs.</p>
+      </div>
+
+      <div class="formality-scale">
+        <div class="formality-item">
+          <strong>Informal</strong>
+          <p>and, but, so, also</p>
+        </div>
+        <div class="formality-item">
+          <strong>Neutral</strong>
+          <p>however, therefore, moreover</p>
+        </div>
+        <div class="formality-item">
+          <strong>Formal</strong>
+          <p>furthermore, consequently, nevertheless</p>
+        </div>
+      </div>
+      
       <div class="transition-category">
         <h3>ADDITION</h3>
         <p>Used when adding information to a sentence:</p>
@@ -65,6 +107,7 @@
           <p><strong>Examples:</strong></p>
           <p>• She speaks Turkish; <strong>in addition</strong>, she knows English.</p>
           <p>• He is intelligent. <strong>Furthermore</strong>, he works very hard.</p>
+          <p>• The car is economical. <strong>Moreover</strong>, it's environmentally friendly.</p>
           <p><strong>Note:</strong> "Furthermore" and "moreover" are more emphatic. "What's more" is informal.</p>
         </div>
       </div>
@@ -83,6 +126,8 @@
           <p><strong>Examples:</strong></p>
           <p>• It was raining heavily. <strong>Therefore</strong>, the match was canceled.</p>
           <p>• He didn't study. <strong>As a result</strong>, he failed the exam.</p>
+          <p>• The company lost money. <strong>Consequently</strong>, they had to lay off staff.</p>
+          <p>• She was the most qualified candidate. <strong>Thus</strong>, she got the job.</p>
         </div>
       </div>
 
@@ -96,6 +141,12 @@
           <div class="transition-item">Whereas</div>
           <div class="transition-item">Nevertheless</div>
         </div>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• I like coffee. <strong>However</strong>, I don't drink it after 5 PM.</p>
+          <p>• The north is industrial. <strong>In contrast</strong>, the south is agricultural.</p>
+          <p>• She wanted to buy the car. <strong>Nevertheless</strong>, she decided to save money.</p>
+        </div>
       </div>
 
       <div class="transition-category">
@@ -106,11 +157,18 @@
           <div class="transition-item">In fact</div>
           <div class="transition-item">Undoubtedly</div>
           <div class="transition-item">Clearly</div>
+          <div class="transition-item">Obviously</div>
+        </div>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• <strong>Indeed</strong>, this is the best solution available.</p>
+          <p>• <strong>In fact</strong>, I was planning to call you today.</p>
+          <p>• <strong>Undoubtedly</strong>, climate change is a serious threat.</p>
         </div>
       </div>
 
       <div class="transition-category">
-        <h3>TIME</h3>
+        <h3>TIME & SEQUENCE</h3>
         <div class="transition-list">
           <div class="transition-item">Meanwhile</div>
           <div class="transition-item">Subsequently</div>
@@ -119,6 +177,20 @@
           <div class="transition-item">Then</div>
           <div class="transition-item">Next</div>
         </div>
+        <div class="examples">
+          <p><strong>Examples:</strong></p>
+          <p>• I'll finish this report. <strong>Meanwhile</strong>, you can prepare the presentation.</p>
+          <p>• She graduated in 2020. <strong>Subsequently</strong>, she found a job in marketing.</p>
+          <p>• We tried several solutions. <strong>Eventually</strong>, we found one that worked.</p>
+        </div>
+      </div>
+
+      <div class="usage-tip">
+        <h4>🎯 Punctuation Rules:</h4>
+        <p><strong>Comma after transition:</strong> When a transition starts a sentence, use a comma after it.</p>
+        <p><strong>Example:</strong> "However, I don't agree with that opinion."</p>
+        <p><strong>Semicolon before transition:</strong> When connecting two independent clauses, use a semicolon before and comma after.</p>
+        <p><strong>Example:</strong> "I wanted to go; however, I was too tired."</p>
       </div>
     </section>
 
@@ -133,10 +205,32 @@
       <button class="quiz-btn" onclick="checkQuiz2()">Check Answers</button>
       <div id="result2" class="quiz-result"></div>
     </section>
+
+    <section class="content-section">
+      <h2>📖 Advanced Usage & Examples</h2>
+      
+      <div class="transition-category">
+        <h3>Academic Writing Transitions</h3>
+        <div class="examples">
+          <p><strong>Adding evidence:</strong> "The data supports this conclusion. <strong>Furthermore</strong>, recent studies confirm these findings."</p>
+          <p><strong>Showing contrast:</strong> "The theory appears sound. <strong>However</strong>, practical applications reveal limitations."</p>
+          <p><strong>Drawing conclusions:</strong> "The results were consistent across all tests. <strong>Therefore</strong>, we can accept the hypothesis."</p>
+        </div>
+      </div>
+
+      <div class="transition-category">
+        <h3>Business Communication</h3>
+        <div class="examples">
+          <p><strong>Formal reports:</strong> "Sales increased by 15%. <strong>Consequently</strong>, we can invest in new equipment."</p>
+          <p><strong>Email communication:</strong> "The meeting is postponed. <strong>Meanwhile</strong>, please review the attached documents."</p>
+          <p><strong>Presentations:</strong> "We've covered the financial overview. <strong>Now</strong>, let's discuss marketing strategies."</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 English Connectives Master. B2 Level Learning Hub</p>
+    <p>&copy; 2025 English Connectives Master. Designed by Ada & Tuyen</p>
   </footer>
 
   <script>
@@ -145,7 +239,9 @@
       {q: "She was tired. ______, she went to bed early.", options: ["In addition", "Therefore", "However", "For instance"], correct: "Therefore"},
       {q: "I like apples. ______, I don't like bananas.", options: ["Moreover", "On the other hand", "For example", "Therefore"], correct: "On the other hand"},
       {q: "He's kind. ______, he helps everyone.", options: ["However", "For example", "Therefore", "In contrast"], correct: "For example"},
-      {q: "We were late. ______, we missed the bus.", options: ["As a result", "For instance", "In contrast", "However"], correct: "As a result"}
+      {q: "We were late. ______, we missed the bus.", options: ["As a result", "For instance", "In contrast", "However"], correct: "As a result"},
+      {q: "The weather was bad. ______, the event was canceled.", options: ["Consequently", "Moreover", "However", "Besides"], correct: "Consequently"},
+      {q: "I enjoy swimming. ______, my brother prefers running.", options: ["Meanwhile", "Therefore", "Furthermore", "Whereas"], correct: "Meanwhile"}
     ];
 
     // Initialize quiz
